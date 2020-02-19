@@ -1,50 +1,43 @@
 from sys import exit
-cord = input().split('-')
+s = input()
 
-if cord[0] == cord[1]:
-    print('NO')
-    exit()
-elif cord[0][0] == cord[0][0].lower() or cord[1][0] == cord[1][0].lower():
+
+def switch(symbol):
+    if symbol == 'A': return 1
+    if symbol == 'B': return 2
+    if symbol == 'C': return 3
+    if symbol == 'D': return 4
+    if symbol == 'E': return 5
+    if symbol == 'F': return 6
+    if symbol == 'G': return 7
+    if symbol == 'H': return 8
+    if symbol == '1': return 1
+    if symbol == '2': return 2
+    if symbol == '3': return 3
+    if symbol == '4': return 4
+    if symbol == '5': return 5
+    if symbol == '6': return 6
+    if symbol == '7': return 7
+    if symbol == '8': return 8
+    if symbol == '9': return 9
+    return 0
+
+try:
+    x1 = switch(s[0]); y1 = switch(s[1]);
+    x2 = switch(s[3]); y2 = switch(s[4]);
+except:
     print('ERROR')
     exit()
 
-def verif_err(symbols, c):
-    for symbol in symbols:
-        if c[0][0] == symbol:
-            break
-    else:
-        print('ERROR')
-        exit()
-    for symbol in symbols:
-        if c[1][0] == symbol:
-            break
-    else:
-        print('ERROR')
-        exit()
-    if (int(c[0][1]) > 8) or (int(c[0][1]) < 1) or (int(c[1][1]) < 1) or int(c[1][1]) > 8:
-        print('ERROR')
-        exit()
-
-
-def verif_no(symbols, c):
-    #if c[0][0] == c[1][0] or c[0][1] == c[1][1]:
-    #    print('NO')
-    #    exit()
-    id1 = symbols.index(c[0][0])
-    id2 = symbols.index(c[1][0])
-    if abs(id1 - id2) > 2 or abs(id1 - id2) == 0:
-        print('NO')
-        exit()
-    elif abs(int(c[0][1]) - int(c[1][1])) > 2 or abs(int(c[0][1]) - int(c[1][1])) == 0:
-        print('NO')
-        exit()
-    
-if len(cord) < 2:
-    print('ERROR')
+if x1 != 0 and x2 != 0 and s[2] == '-' and y1 < 9 and y1 > 0 and y2 > 0:
+    if x2 - x1 == 1 and y2 - y1 == 2: print('YES')
+    elif x2 - x1 == 1 and y1 - y2 == 2: print('YES')
+    elif x1 - x2 == 1 and y1 - y2 == 2: print('YES')
+    elif x1 - x2 == 1 and y2 - y1 == 2: print('YES')
+    elif x2 - x1 == 2 and y2 - y1 == 1: print('YES')
+    elif x2 - x1 == 2 and y1 - y2 == 1: print('YES')
+    elif x1 - x2 == 2 and y1 - y2 == 1: print('YES')
+    elif x1 - x2 == 2 and y2 - y1 == 1: print('YES')
+    else: print('NO')
 else:
-    c = [list(cord[0]), list(cord[1])]
-    symbols = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-    verif_err(symbols, c)
-    verif_no(symbols, c)
-    print('YES')
-    
+    print('ERROR')
