@@ -37,7 +37,8 @@ def convert(num):
 
 
 for i in range(1, len(nums) + 1):
-    if i - 1 == 0: nums[i - 1] = 27
+    while nums[i - 1] - i < 1:
+        nums[i - 1] += 27
     out.append(convert(nums[i - 1] - i))
 
 print(''.join(out))
