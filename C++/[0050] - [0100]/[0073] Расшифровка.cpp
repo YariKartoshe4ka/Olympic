@@ -35,7 +35,7 @@ int to_index(char a) {
 }
 
 
-int to_27(int a) {
+int to_int(int a) {
     switch(a) {
         case 0: return '0';
         case 1: return '1';
@@ -74,8 +74,7 @@ int main() {
     cin >> a;
 
     for (int i = 0; i < strlen(a); i++) {
-        cout << b << endl;
-        b[i] = to_index(a[i]);
+        b[i] = to_27(to_index(a[i]) + (i % 27));
     }
 
     cout << b << endl;
