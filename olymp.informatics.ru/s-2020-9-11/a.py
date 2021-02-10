@@ -12,7 +12,7 @@ def convert(number, base):
 m = -1
 for i in range(2, 10):
     a = convert(x, i)
-    print(a)
+
     if a > m: m = a
 
 print(m)

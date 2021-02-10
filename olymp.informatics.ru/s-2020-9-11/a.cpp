@@ -3,7 +3,7 @@
 using namespace std;
 
 
-int convert(int number, unsigned short int base) {
+long long int convert(int number, unsigned short int base) {
     string out = "";
 
     while (number > 0) {
@@ -11,7 +11,8 @@ int convert(int number, unsigned short int base) {
         number /= base;
     }
 
-    return atoi(out.c_str());
+    char* p;
+    return strtoll(out.c_str(), &p, 10);
 }
 
 
@@ -19,8 +20,8 @@ int main() {
     int x;
     cin >> x;
 
-    int tmp;
-    int max = -1;
+    long long int tmp;
+    long long int max = -1;
     
     for (int i = 2; i < 10; i++) {
         tmp = convert(x, i);
@@ -29,5 +30,6 @@ int main() {
     }
 
     cout << max << endl;
+
     return 0;
 }
