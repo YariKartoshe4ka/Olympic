@@ -1,11 +1,9 @@
 a = int(input())
-b = []
+b = 0
 
 while a > 0:
-    b.append(a%2)
+    if a % 2:
+        b += 1
     a //= 2
 
-b.reverse()
-for i in range(len(b)): b[i] = str(b[i])
-b = ''.join(b).replace('0', '')
-print(len(b))
+print(b)

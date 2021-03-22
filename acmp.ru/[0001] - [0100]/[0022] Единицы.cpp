@@ -2,20 +2,16 @@
 using namespace std;
 
 int main() {
-    int a, b;
+    int a, b = 0;
     cin >> a;
 
-    while (a > 1) {
-        if (a % 2 != 0) {
-            b += 1;
-            a /= 2;
-        } else {
-            a /= 2;
-        }
-        cout << a << endl;
+    while (a > 0) {
+        if (a % 2)
+            b++;
+        a /= 2;
     };
 
-    cout << b;
+    cout << b << endl;
 
     return 0;
 }
