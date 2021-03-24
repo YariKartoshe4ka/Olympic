@@ -1,2 +1,1 @@
-string = input().split('1')
-print(len(max(string)))
+print(len(max(input().split('1'))))
