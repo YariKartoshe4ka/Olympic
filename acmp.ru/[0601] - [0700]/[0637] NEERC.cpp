@@ -14,7 +14,7 @@ int main() {
     cin >> k;
 
     for (i = 0; i < n; i++)
-        s += (a[i] < k ? a[i] : k);
+        s += min(a[i], k);
 
     cout << s << endl;
 

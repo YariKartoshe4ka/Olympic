@@ -1,22 +1,8 @@
 from math import sqrt
 
+x1, y1, r1 = [int(i) for i in input().split()]
+x2, y2, r2 = [int(i) for i in input().split()]
 
-round1 = input().split(' ')
-round2 = input().split(' ')
+k = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-i = 0 
-for v in round1: 
-    round1[i] = int(v)
-    i += 1
-
-i = 0 
-for v in round2: 
-    round2[i] = int(v)
-    i += 1
-
-r = sqrt((round2[0]-round1[0])**2+(round2[1]-round2[1])**2)
-
-if round1[2] + round2[2] >= r and r + round2[2] <= round1[2] and r + round1[2] <= round2[2]:
-    print('YES')
-else:
-    print('NO')
+print('YES' if k <= r1 + r2 and k >= abs(r1 - r2) else 'NO')

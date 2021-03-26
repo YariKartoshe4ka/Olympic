@@ -4,6 +4,6 @@ k = int(input())
 s = 0
 
 for i in a:
-    s += i if i < k else k
+    s += min(i, k)
 
 print(s)
