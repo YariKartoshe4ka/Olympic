@@ -1,14 +1,7 @@
-s, p = map(int, input().split())
+from math import sqrt
 
-a = s - 1
-b = 1
+b, c = [int(i) for i in input().split()]
 
-for i in range(s):
-    if a * b == p:
-        break
-    else:
-        a -= 1
-        b += 1
+d = sqrt(b ** 2 - 4 * c)
 
-for i in sorted([b, a]):
-    print(i, end=' ')
+print(int(b - d) // 2, int(b + d) // 2)
