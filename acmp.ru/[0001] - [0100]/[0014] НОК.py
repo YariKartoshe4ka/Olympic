@@ -1,13 +1,5 @@
-a, b = input().split()
-a = int(a)
-b = int(b)
+from math import gcd
 
-def nod(a, b):
-    while a != 0 and b != 0:
-        if a < b:
-            b %= a
-        else:
-            a %= b
-    return a + b
+a, b = [int(i) for i in input().split()]
 
-print(a * b // nod(a, b))
+print(a * b // gcd(a, b))
