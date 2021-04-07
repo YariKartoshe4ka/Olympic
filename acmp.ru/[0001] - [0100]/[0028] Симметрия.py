@@ -1,11 +1,7 @@
-line = input().split(' ')
-point = input().split(' ')
+x1, y1, x2, y2 = [int(i) for i in input().split()]
+xa, ya = [int(i) for i in input().split()]
 
-if int(line[0]) == int(line[2]):
-    w = abs(int(point[0]) - int(line[0]))
-    w = w if int(point[0]) < int(line[0]) else w - w - w
-    print(str(int(line[0]) + w) + ' ' + point[1])
+if x1 == x2:
+    print((x1 - xa) * 2 + xa, ya)
 else:
-    w = abs(int(point[1]) - int(line[1]))
-    w = w if int(point[1]) < int(line[1]) else w - w - w
-    print(point[0] + ' ' + str(int(line[1]) + w))
+    print(xa, (y1 - ya) * 2 + ya)
