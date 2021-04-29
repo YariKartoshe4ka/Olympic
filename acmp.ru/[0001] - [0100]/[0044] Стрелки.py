@@ -1,9 +1,8 @@
-string = input()
-l = 5
-rez = 0
+s = input()
+cnt = 0
 
-for i in range(len(string)):
-    if string[i:i+l] == '<--<<' or string[i:i+l] == '>>-->':
-       rez += 1
+for i in range(len(s) - 4):
+    if s[i:i+5] == '<--<<' or s[i:i+5] == '>>-->':
+       cnt += 1
 
-print(rez)
+print(cnt)
