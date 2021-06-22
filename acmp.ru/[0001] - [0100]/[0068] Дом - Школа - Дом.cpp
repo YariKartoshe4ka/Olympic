@@ -1,17 +1,19 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 
 int main() {
-    char m[6];
+    string s;
     int x;
     
-    cin >> m >> x;
+    cin >> s >> x;
 
-    if (x % 2 == 0) {
-        cout << "No" << endl;
-    } else {
+    if (s == "Home" or x % 2 != 0) {
         cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
     }
+
     return 0;
 }
