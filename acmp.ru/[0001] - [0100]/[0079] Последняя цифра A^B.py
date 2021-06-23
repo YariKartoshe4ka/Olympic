@@ -1,2 +1,1 @@
-a, b = [int(i) for i in input().split(' ')]
-print(str(a**b)[-1])
+print(pow(*map(int, input().split())) % 10)
