@@ -1,18 +1,2 @@
-count = 0
-run = True
-n, m, k = [int(i) for i in input().split(' ')]
-
-if n < m and n <= k:
-    print('NO')
-else:
-    while run:
-        count += 1
-
-        m -= n
-
-        if m <= 0:
-            run = False
-        else:
-            m += k
-
-    print(count)
+n, m, k = map(int, input().split())
+print((m - n - 1) // (n - k) + 2 if m <= n >= k else n // m or 'NO')
