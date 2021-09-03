@@ -1,3 +1,3 @@
 n, p = map(int, input().split())
 
-print(1 / (n + ((1 - n) / p)))
+print(1 / (p / 100 + (100 - p) / 100 / n))
