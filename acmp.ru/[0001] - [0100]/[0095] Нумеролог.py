@@ -1,8 +1,8 @@
-n = input()
-count = 0
+n = int(input())
+cnt = 0
 
-while len(n) > 1:
-    n = str(sum(list(map(int, list(n)))))
-    count += 1
+while n > 9:
+    n = sum(map(int, list(str(n))))
+    cnt += 1
 
-print(n, count)
+print(n, cnt)
