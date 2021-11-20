@@ -63,9 +63,6 @@ struct Tree {
             r = (r - 1) / 2;
         }
 
-
-        // cout << rc - lc + 1 << ' ' << bisect_right(cnt[ans].begin(), cnt[ans].end(), rc) << ' ' << bisect_left(cnt[ans].begin(), cnt[ans].end(), lc) << endl;
-
         if (cnt.count(ans))
             return rc - lc - bisect_right(cnt[ans].begin(), cnt[ans].end(), rc) + bisect_left(cnt[ans].begin(), cnt[ans].end(), lc) + 1;
         return rc - lc + 1;
