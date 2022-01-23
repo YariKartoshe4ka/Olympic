@@ -1,27 +1,11 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+
 using namespace std;
+using ll = long long;
 
-
-const int base = 31, mod = 1000000007;
-
-
-int rmod(long long x) {
-    return (x % (long long)mod + mod) % mod;
-}
-
-
-int binpow(long long x, int n) {
-    int r = 1;
-    x = rmod(x);
-    while (n) {
-        if (n & 1) r = rmod(r * x);
-        x = rmod(x * x);
-        n >>= 1;
-    }
-    return r;
-}
+const int base = 31;
 
 
 int main() {
@@ -30,24 +14,33 @@ int main() {
 
     int n = a.length(), m = b.length();
 
-    vector<int> f(n + 1);
+
+    vector<ll> pows(n);
+    pows[0] = 1;
+    for (int i = 1; i < n; ++i)
+        pows[i] = pows[i - 1] * base;
+
+
+    vector<ll> h(n + 1);
+    h[0] = 0;
     for (int i = 1; i <= n; ++i)
-        f[i] = rmod((long long)f[i - 1] * base + a[i - 1] - 'a' + 1);
+        h[i] = h[i - 1] + (a[i - 1] - 'a' + 1) * pows[i - 1];
 
-    int h = 0;
+    ll hash = 0;
     for (int i = 0; i < m; ++i)
-        h = rmod(h + ((long long)b[i] - 'a' + 1) * (long long)binpow(base, m - i - 1));
+        hash = hash + (b[i] - 'a' + 1) * pows[i];
 
+    
     vector<int> ans;
     for (int i = 0; i <= n - m; ++i) {
-        int x = rmod((long long)f[i + m] - (long long)f[i] * binpow(base, m));
-        if (x == h)
+        ll shash = h[i + m] - h[i];
+
+        if (shash == hash * pows[i])
             ans.push_back(i);
     }
 
     cout << ans.size() << endl;
-    for (int i = 0; i < ans.size(); ++i)
-        cout << ans[i] << ' ';
+    for (int i : ans) cout << i << ' ';
 
     return 0;
 }

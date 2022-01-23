@@ -2,27 +2,12 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
+using ll = long long;
 
 
-const int base = 31, mod = 1000000007;
-
-
-int rmod(long long x) {
-    return (x % (long long)mod + mod) % mod;
-}
-
-
-int binpow(long long x, int n) {
-    int r = 1;
-    x = rmod(x);
-    while (n) {
-        if (n & 1) r = rmod(r * x);
-        x = rmod(x * x);
-        n >>= 1;
-    }
-    return r;
-}
+const int base = 31;
 
 
 int main() {
@@ -31,21 +16,28 @@ int main() {
 
     int n = a.length();
 
-    vector<int> f(n + 1);
+    vector<ll> pows(n);
+    pows[0] = 1;
+    for (int i = 1; i < n; ++i)
+        pows[i] = pows[i - 1] * base;
+
+
+    vector<ll> h(n + 1);
+    h[0] = 0;
     for (int i = 1; i <= n; ++i)
-        f[i] = rmod((long long)f[i - 1] * base + a[i - 1] - 'a' + 1);
+        h[i] = h[i - 1] + (a[i - 1] - 'a' + 1) * pows[i - 1];
 
-    long long ans = 0;
+
+    ll ans = 0;
     for (int l = 1; l <= n; ++l) {
-        vector<int> fl(n - l + 1);
+        vector<ll> hl(n - l + 1);
 
-        for (int i = 0; i <= n - l; ++i) {
-            fl[i] = rmod((f[l + i] - f[i]) * (long long)binpow(base, n - i - 1));
-        }
+        for (int i = 0; i <= n - l; ++i)
+            hl[i] = (h[i + l] - h[i]) * pows[n - l - i];
 
-        sort(fl.begin(), fl.end());
-        fl.erase(unique(fl.begin(), fl.end()), fl.end());
-        ans += fl.size();
+        sort(hl.begin(), hl.end());
+        hl.erase(unique(hl.begin(), hl.end()), hl.end());
+        ans += hl.size();
     }
 
     cout << ans << endl;
