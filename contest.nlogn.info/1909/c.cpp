@@ -29,54 +29,48 @@ int main() {
         h[i] = h[i - 1] + (a[i - 1] - 'a' + 1) * pows[i - 1];
 
 
-    for (int i = 0; i < m; ++i) {
+    while (m--) {
         int l1, r1, l2, r2;
         cin >> l1 >> r1 >> l2 >> r2;
 
-        int x1 = r1 - l1, x2 = r2 - l2;
-        if (x1 > x2)
-            cout << '>';
-        else if (x1 < x2)
-            cout << '<';
+        bool flag = (l1 > l2);
+        if (flag) {
+            swap(l1, l2);
+            swap(r1, r2);
+        }
 
-        else {
-            bool flag = l1 > l2;
-            if (flag) {
-                swap(l1, l2);
-                swap(r1, r2);
-            }
+        int x = l2 - l1, l = l1, r = r1, mid;
 
-            int x = l2 - l1;
-            int l = l1, r = r1, mid = (l + r) / 2;
+        ll hash1, hash2;
 
-            ll hash1 = 0, hash2 = 1;
+        while (l < r) {
+            mid = (l + r) / 2;
 
-            while (l < r) {
-                mid = (l + r) / 2;
+            hash1 = (h[mid + 1] - h[l]) * pows[l + x];
+            hash2 = (h[mid + 1 + x] - h[l + x]) * pows[l];
 
-                hash1 = (h[mid + 1] - h[l]) * pows[l + x];
-                hash2 = (h[mid + 1 + x] - h[l + x]) * pows[l];
-
-                // cout << hash1 << ' ' << hash2 << endl;
-                // cout << l << ' ' << mid << ' ' << r << endl;
-
-                if (hash1 == hash2)
-                    l = mid + 1;
-                else
-                    r = mid;
-            }
-
-            if (hash1 == hash2)
-                ++mid;
-
+            // cout << hash1 << ' ' << hash2 << endl;
             // cout << l << ' ' << mid << ' ' << r << endl;
 
-            if (a[mid + x * (int)flag] > a[mid + x * (int)!flag])
-                cout << '>';
-            else if (a[mid + x * (int)flag] < a[mid + x * (int)!flag])
-                cout << '<';
+            if (hash1 == hash2)
+                l = mid + 1;
             else
+                r = mid;
+        }
+
+        // cout << l << ' ' << mid << ' ' << r << endl;
+
+        if (a[l + x * flag] > a[l + x * !flag])
+            cout << '>';
+        else if (a[l + x * flag] < a[l + x * !flag])
+            cout << '<';
+        else {
+            if (r1 - l1 == r2 - l2)
                 cout << '=';
+            else if (r1 - l1 > r2 - l2)
+                cout << (flag ? '<' : '>');
+            else
+                cout << (flag ? '>' : '<');
         }
 
 
