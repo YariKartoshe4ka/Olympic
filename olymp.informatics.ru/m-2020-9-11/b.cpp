@@ -13,6 +13,6 @@ int main() {
         r += pow(2, i - 1);
 
     cout << r << endl;
-    
+
     return 0;
 }

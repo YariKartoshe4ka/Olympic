@@ -17,7 +17,7 @@ int main() {
 
     vector<int> d(n + 1, INF);
     d[0] = -INF;
-     
+
     for (int i = 0; i < n; i++) {
         int j = int (upper_bound (d.begin(), d.end(), a[i]) - d.begin());
         if (2 * d[j - 1] >= a[i] && a[i] > d[j])

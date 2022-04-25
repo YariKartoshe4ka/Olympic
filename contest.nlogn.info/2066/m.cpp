@@ -10,7 +10,7 @@ int main() {
     cin >> a1 >> b1 >> c1 >> a2 >> b2 >> c2;
 
     bool fx = 0, fy = 0;
- 
+
     if (a1 == 0) {
         y = -c1 / b1;
         fy = 1;
@@ -19,7 +19,7 @@ int main() {
         x = -c1 / a1;
         fx = 1;
     }
- 
+
     if (a2 == 0) {
         y = -c2 / b2;
         fy = 1;
@@ -28,8 +28,8 @@ int main() {
         x = -c2 / a2;
         fx = 1;
     }
- 
- 
+
+
     if (fx && !fy)
         y = (-a1 * )
     else if (!fx && fy)

@@ -20,7 +20,7 @@ int main() {
     string a, b, c;
     cin >> a >> b >> c;
 
-    
+
     if (match(a, b, c, "XXX"))
         cout << "Win" << endl;
     else if (match(a, b, c, "OOO"))

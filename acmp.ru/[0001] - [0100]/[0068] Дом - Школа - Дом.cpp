@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     string s;
     int x;
-    
+
     cin >> s >> x;
 
     if (s == "Home" or x % 2 != 0) {

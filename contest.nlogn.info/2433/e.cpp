@@ -45,7 +45,7 @@ int main() {
 
         union_sets(a - 1, b - 1);
     }
-    
+
     for (int i : s[find_set(0)])
         cout << i + 1 << ' ';
 

@@ -16,7 +16,7 @@ int main() {
     double ans = atan2(y, x);
 
     if (ans < 0) ans += 2 * M_PI;
-    
+
     printf("%.7lf", ans);
 
     return 0;

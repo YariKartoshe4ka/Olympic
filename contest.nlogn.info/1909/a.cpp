@@ -30,7 +30,7 @@ int main() {
     for (int i = 0; i < m; ++i)
         hash = hash + (b[i] - 'a' + 1) * pows[i];
 
-    
+
     vector<int> ans;
     for (int i = 0; i <= n - m; ++i) {
         ll shash = h[i + m] - h[i];

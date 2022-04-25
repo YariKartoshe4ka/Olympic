@@ -7,7 +7,7 @@ int main() {
 
     cin >> s;
     while (!cin.eof()) {
-        if (s == 'A') 
+        if (s == 'A')
             swap(a, b);
         if (s == 'B')
             swap(b, c);

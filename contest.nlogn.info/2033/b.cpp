@@ -16,7 +16,7 @@ int main() {
     for (int i = 0; i < 1 << n; ++i) {
         vector<int> a;
 
-        for (int j = 0; j < n; ++j) 
+        for (int j = 0; j < n; ++j)
             if (i & 1 << j)
                 a.push_back(c[j]);
 

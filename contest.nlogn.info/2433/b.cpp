@@ -31,7 +31,7 @@ bool union_sets(int a, int b) {
     parent[b] = a;
     s[a] += s[b];
 
-    return true;    
+    return true;
 }
 
 
@@ -71,7 +71,7 @@ int main() {
     for (int i = 0; i < m; ++i) {
         if (!del.count(i)) {
             auto [v, u] = g[i];
-            if (union_sets(v, u)) 
+            if (union_sets(v, u))
                 --cnt;
         }
     }

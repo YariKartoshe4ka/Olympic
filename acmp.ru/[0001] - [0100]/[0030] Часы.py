@@ -19,7 +19,7 @@ while start != stop:
             start_c[0] += 1; start_c[1] = '00'
             if start_c[0] == 24: start_c[0] = '00';
     for i in range(len(start_c)): start_c[i] = str(start_c[i])
-    
+
     if len(start_c[2]) != 2: start_c[2] = '0' +start_c[2]
     if len(start_c[1]) != 2: start_c[1] = '0' + start_c[1]
     if len(start_c[0]) != 2: start_c[0] = '0' + start_c[0]

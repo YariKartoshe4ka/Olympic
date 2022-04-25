@@ -7,5 +7,3 @@ for i in range(int(input())):
         mask.append(b[2:])
 
     masks.append(''.join(mask))
-
-    

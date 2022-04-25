@@ -15,7 +15,7 @@ int main() {
         if (t < min)
             min = t;
     }
-    
+
     cout << min << ' ' << max << endl;
 
     return 0;

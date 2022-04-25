@@ -9,7 +9,7 @@ string shift(string str, int a) { // Only positive shifts
 
     for (int i = 0; i < str.length(); i++)
         new_str[(i + a) % str.length()] = str[i];
-    
+
     cout << string(new_str) << endl;
     return string(new_str);
 }

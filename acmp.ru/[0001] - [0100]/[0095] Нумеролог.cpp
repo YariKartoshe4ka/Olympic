@@ -22,6 +22,6 @@ int main() {
     }
 
     cout << n << ' ' << cnt << endl;
- 
+
     return 0;
 }

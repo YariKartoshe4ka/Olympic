@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     short int l = 1, r = 31, flag, n, nl, nr;
     cin >> n;
-    
+
     for (int i = 0; i < n; i++) {
         cin >> nl >> nr;
 

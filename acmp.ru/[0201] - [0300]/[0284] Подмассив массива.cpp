@@ -15,7 +15,7 @@ int main() {
 
     for (i = 0; i < m; i++) {
         cin >> l >> r;
-        
+
         for (j = l - 1; j < r; j++)
             cout << a[j] << ' ';
         cout << endl;

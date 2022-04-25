@@ -22,7 +22,7 @@ int main() {
 
     long long int tmp;
     long long int max = -1;
-    
+
     for (int i = 2; i < 10; i++) {
         tmp = convert(x, i);
         if (max < tmp)

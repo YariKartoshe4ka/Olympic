@@ -22,7 +22,7 @@ class Tree:
     def get(self, l, r):
         l += self.n - 1
         r += self.n - 1
-        
+
         _max = max(self.tree[l][0], self.tree[r][0])
         _min = max(self.tree[l][1], self.tree[r][1])
 

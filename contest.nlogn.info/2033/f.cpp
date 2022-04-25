@@ -43,7 +43,7 @@ int main() {
             cout << ans.size() << '\n';
             for (int i : ans) cout << i << ' ';
             cout << '\n';
-        }  
+        }
     }
 
     return 0;

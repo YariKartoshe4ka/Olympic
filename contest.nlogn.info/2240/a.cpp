@@ -10,7 +10,7 @@ int main() {
     for (int i = 0; i < n; ++i) cin >> a[i];
 
     int dp[n] = {0}, ans = -1;
-    
+
     for (int i = 0; i < n; ++i) {
         int m = -1;
 

@@ -8,7 +8,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         cin >> temp;
-        
+
         if (temp >= 0)
             counter[temp]++;
     }

@@ -28,7 +28,7 @@ int main() {
         amax = a[i] > amax ? a[i] : amax;
 
     for (int i = 1; i < m - 1; ++i)
-        bmax = b[i] > bmax ? b[i] : bmax; 
+        bmax = b[i] > bmax ? b[i] : bmax;
 
 
     cout << max4(

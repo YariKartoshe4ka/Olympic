@@ -14,6 +14,3 @@ def count(figure:str, cord:str):
 count('R', c[1])
 #f.pop(f.index(c[1], 10))
 print(f)
-
-
-

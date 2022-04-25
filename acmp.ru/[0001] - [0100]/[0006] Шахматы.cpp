@@ -22,7 +22,7 @@ int func(char a) {
         case '8': return 8;
         default: return 0;
     }
-} 
+}
 
 int main() {
     string s;
@@ -43,4 +43,4 @@ int main() {
         else cout << "NO";
     } else cout << "ERROR";
     return 0;
-} 
+}

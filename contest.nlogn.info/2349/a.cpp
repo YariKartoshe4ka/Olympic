@@ -65,7 +65,7 @@ int main() {
         }
     }
 
-    for (int i = 0; i < (n - 1) / 2 - cnt; ++i) heap.pop(); 
+    for (int i = 0; i < (n - 1) / 2 - cnt; ++i) heap.pop();
 
     if (n % 2)
         cout << heap.pop() << endl;

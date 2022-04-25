@@ -35,7 +35,7 @@ void pi_funciton(string &s) {
             j = pi[j - 1];
         if (s[i] == s[j]) ++j;
         pi[i] = j;
-        cout << pi[i] << ' '; 
+        cout << pi[i] << ' ';
     }
     cout << endl;
 }
