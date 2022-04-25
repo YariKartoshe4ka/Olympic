@@ -5,6 +5,7 @@ recount () {
     sed -r -i "s/[0-9]*(<!-- $2 -->)/$files\1/g" README.md
 }
 
+recount acm.timus.ru TIMUS
 recount acmp.ru ACMP
 recount codeforces.com CODEFORCES
 recount contest.nlogn.info NLOGN
