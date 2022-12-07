@@ -1,7 +1,7 @@
 #!/bin/bash
 
 recount () {
-    files=$(find $1 -type f -name '*.cpp' -o -name '*.py' 2>/dev/null | wc -l)
+    files=$(find $1 -type f,l -name '*.cpp' -o -name '*.py' 2>/dev/null | wc -l)
     sed -r -i "s/[0-9]*(<!-- $2 -->)/$files\1/g" README.md
 }
 

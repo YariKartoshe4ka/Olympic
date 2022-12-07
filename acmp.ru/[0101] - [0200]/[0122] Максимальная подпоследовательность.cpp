@@ -1,0 +1,1 @@
+../../contest.nlogn.info/2240/a.cpp

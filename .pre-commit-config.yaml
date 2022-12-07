@@ -8,8 +8,14 @@ repos:
 
   - repo: local
     hooks:
+      - id: sync-nlogn
+        name: sync nlogn solves
+        entry: scripts/sync-nlogn.py
+        language: system
+        always_run: true
+
       - id: recount-solves
-        name: Recount solves
+        name: recount solves
         entry: scripts/recount-solves.sh
         language: script
         always_run: true
