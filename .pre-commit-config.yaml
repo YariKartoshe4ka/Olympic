@@ -12,3 +12,4 @@ repos:
         name: Recount solves
         entry: scripts/recount-solves.sh
         language: script
+        always_run: true
